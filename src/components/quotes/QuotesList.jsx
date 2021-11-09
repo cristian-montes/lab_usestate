@@ -1,6 +1,7 @@
 import React from "react";
 import Quote from './Quote';
 import PropTypes from 'prop-types';
+import { List, Divv } from './QuotesListStyles';
 
 export default function QuoteList({results, loading}){
 
@@ -10,19 +11,19 @@ export default function QuoteList({results, loading}){
         </li>
     ))
 
-
-
     return(
-        <div>
+        <Divv>
             {loading ? (<h1>Loading..</h1>)
                 :(
             <div>
-                <ul aria-label="quotes">{quoteList}</ul>
+                <List aria-label="quotes" >{quoteList}</List>
             </div>
             )}
-        </div>
-        )
+        </Divv>
+        );
+
 }
+
 
 QuoteList.propTypes ={
     results: PropTypes.arrayOf(

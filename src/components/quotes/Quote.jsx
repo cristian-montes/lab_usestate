@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { QuoteDiv } from "./QuoteStyles";
 
 export default function Quote({quoteTextOnly}){
     return(
-        <figure>
+        <QuoteDiv>
             <p>{quoteTextOnly}</p>
-        </figure>
+        </QuoteDiv>
     )
 }
 

@@ -8,9 +8,6 @@ const QuotesContainer = () => {
     const [results, setResults] = useState([])
     const [loading, setLoading] = useState(false)
 
-    // useEffect(() => {
-    //     fetchRequest();
-    // })
 
     const handleChange = (event) =>{
         setCharacter(event.target.value);
