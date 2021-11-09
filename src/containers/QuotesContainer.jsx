@@ -26,18 +26,22 @@ const QuotesContainer = () => {
 
 
 
+    let resultList = null;
+    if(results.length === 0) {
+        resultList = <div>No images found</div>
+    } else { 
+        resultList = <QuoteList loading={loading} results={results}/>
+    }
 
     return(
+
         <>
             <Controls
                 character = {character}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
             />
-            <QuoteList
-                loading={loading}
-                results={results}
-            />
+            {resultList}
         </>
     )
 }
