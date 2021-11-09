@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Controls from '../components/controls/Controls';
 import QuoteList from '../components/quotes/QuotesList';
 import { fetchRequest } from '../services/apiRequest';
@@ -6,6 +6,7 @@ import { fetchRequest } from '../services/apiRequest';
 const QuotesContainer = () => {
     const [character, setCharacter] = useState('');
     const [results, setResults] = useState([])
+    const [loading, setLoading] = useState(false)
 
     // useEffect(() => {
     //     fetchRequest();
@@ -17,10 +18,13 @@ const QuotesContainer = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
 
         const response = await fetchRequest(character);
+
         setResults(response);
-        console.log('result', results);
+        setLoading(false);
+       
     }
 
 
@@ -34,6 +38,7 @@ const QuotesContainer = () => {
                 handleSubmit={handleSubmit}
             />
             <QuoteList
+                loading={loading}
                 results={results}
             />
         </>
