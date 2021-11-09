@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 
 export default function Quote({quoteTextOnly}){
     return(
@@ -7,4 +7,8 @@ export default function Quote({quoteTextOnly}){
             <p>{quoteTextOnly}</p>
         </figure>
     )
+}
+
+Quote.propTypes = {
+    quoteTextOnly: PropTypes.string.isRequired
 }
