@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Form } from './ControlsStyles'
 
 const Controls = ({handleChange,character, handleSubmit}) => {
    return( 
-   <form onSubmit = {handleSubmit}>
+   <Form onSubmit = {handleSubmit}>
         
         <label htmlFor='characters'>you favorite character</label>
         <input
@@ -12,7 +13,7 @@ const Controls = ({handleChange,character, handleSubmit}) => {
             onChange ={handleChange}
         />
         <button aria-label="get-quotes"> Get Quotes</button>
-    </form>
+    </Form>
    )
 }
 
