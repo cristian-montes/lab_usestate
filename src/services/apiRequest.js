@@ -3,10 +3,8 @@ export const fetchRequest = async (character) => {
     const URL = `https://damp-cove-34137.herokuapp.com/api/quotes/characters`;
 
     const res = await fetch(`${URL}/${character}`);
-    
     const data = await res.json();
-    console.log('data', data)
-
+  
     return data;
 
 

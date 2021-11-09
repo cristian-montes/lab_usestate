@@ -14,6 +14,14 @@ const QuotesContainer = () => {
         setCharacter(event.target.value);
     }
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const response = await fetchRequest(character);
+        console.log('response', response);
+        setResults(response);
+    }
+
 
 
 
@@ -21,6 +29,7 @@ const QuotesContainer = () => {
         <Controls
             character = {character}
             handleChange={handleChange}
+            handleSubmit={handleSubmit}
         />
     )
 }

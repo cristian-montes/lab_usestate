@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Controls = ({handleChange,character}) => {
-   return( <form>
+const Controls = ({handleChange,character, handleSubmit}) => {
+   return( 
+   <form onSubmit = {handleSubmit}>
         
         <label htmlFor='characters'>you favorite character</label>
         <input
@@ -13,5 +15,14 @@ const Controls = ({handleChange,character}) => {
     </form>
    )
 }
+
+Controls.propTypes = {
+    handleChange: PropTypes.func.isRequired,
+    character: PropTypes.string,
+    handleSubmit: PropTypes.func.isRequired
+}
+
+
+
 
 export default Controls;
